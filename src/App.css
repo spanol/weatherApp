@@ -1,38 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background: #ffff;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  color: black;
+  margin: 20px 0 0 0px;
+  background: #b1adad;
+  /* font-weight: bold; */
+  /* z-index: -1; */
+}
+.warm{
+background-image: url(https://github.com/TylerPottsDev/weather-react/blob/master/src/assets/warm-bg.jpg?raw=true);
+
+background-repeat: no-repeat;
+background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cold{
+background-image: url(https://github.com/TylerPottsDev/weather-react/blob/master/src/assets/cold-bg.jpg?raw=true);
+background-repeat: no-repeat;
+background-size: cover;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.header {
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #0080cd;
+  color: white;
+  height: 60px;
+}
+
+.form {
+  height: 30px;
+}
+
+.search {
+  border: none;
+  background: none;
+  position: relative;
+  right: 18px;
+  /* top: 50%; */
+  /* left: 300px; */
+}
+
+.input {
+  /* box-shadow: 0px 5px rgba(0, 0, 0, 0.2); */
+  background-color: rgba(9, 2, 105, 0);
+  padding: 20px;
+  border-radius: 5px;
+  outline: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.wheater {
+  margin: 30px 0px 10px 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.city {
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.date {
+  font-size: 15px;
+  margin: 5px 0px 10px 0px;
+}
+
+.temp {
+  flex-direction: column;
+  align-items: center;
+}
+
+.temp h3 {
+  font-size: 50px;
+}
+
+.divisor {
+  margin: 0px 0px 10px 0px;
+  width: 99px;
+  justify-self: center;
+}
+
+.forecast{
+  margin: 30px 0 0 0;
 }

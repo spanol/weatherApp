@@ -30,9 +30,12 @@ const WheaterContainer = () => {
     return <h1>Para iniciar, digite uma cidade</h1>;
   };
 
-  if (wheater === null) return <AwaitSearch />;
 
-  return <Wheater wheater={wheater} forecast={forecast} />;
+  return (
+    <div className="container">
+    { wheater === null ? <AwaitSearch/> : <Wheater wheater={wheater} forecast={forecast} />}
+    </div>
+  );
 };
 
 export default WheaterContainer;

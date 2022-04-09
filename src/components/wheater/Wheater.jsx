@@ -30,7 +30,6 @@ const Wheater = ({ wheater, forecast }) => {
   return (
     <>
       {/* <div className={wheater.main.feels_like > 25 ? "container warm" : "container cold"}> */}
-      <div className="container">
         <div className="city">
           <p>Weather now in</p>
           {wheater.name}, {wheater.sys.country}
@@ -73,7 +72,6 @@ const Wheater = ({ wheater, forecast }) => {
                 </p>
               </div>
             ))}
-        </div>
       </div>
     </>
   );

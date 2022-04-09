@@ -14,14 +14,12 @@ body {
 }
 
 .container {
+  padding-top: 10px;
   position: absolute;
-  height: 100%;
-  width: 100%;
-  color: black;
-  margin: 20px 0 0 0px;
+  width: 100vw;
+  height: 100vh;
+  margin-inline: auto;
   background: #b1adad;
-  /* font-weight: bold; */
-  /* z-index: -1; */
 }
 .warm{
 background-image: url(https://github.com/TylerPottsDev/weather-react/blob/master/src/assets/warm-bg.jpg?raw=true);
@@ -41,6 +39,7 @@ background-size: cover;
 }
 
 .header {
+  align-items: center;
   text-align: center;
   justify-content: center;
   background-color: #0080cd;
@@ -63,11 +62,12 @@ background-size: cover;
 
 .input {
   /* box-shadow: 0px 5px rgba(0, 0, 0, 0.2); */
-  background-color: rgba(9, 2, 105, 0);
+  /* background-color: rgba(9, 2, 105, 0);
   padding: 20px;
   border-radius: 5px;
   outline: none;
-  color: white;
+  color: white; */
+
 }
 
 .wheater {
@@ -100,5 +100,14 @@ background-size: cover;
 }
 
 .forecast{
+  justify-content: center;
   margin: 30px 0 0 0;
+}
+
+.footer {
+  bottom: -90px;
+  position: absolute;
+  width: 100%;
+  justify-content: center;
+  height: 60px;
 }

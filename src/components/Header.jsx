@@ -25,7 +25,8 @@ const Header = () => {
   };
 
   return (
-    <nav className="flex header">
+    <nav className="flex pagecontainer header">
+      <img className="logo" src={"https://cdn.iconscout.com/icon/free/png-256/weather-2191838-1846632.png"} alt="logo" />
       <form className="flex  form" onSubmit={handleOnSubmit}>
       <input
         value={search}

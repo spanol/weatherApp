@@ -3,7 +3,7 @@ import { Socials } from "./Socials";
 
 export default function Footer() {
   return (
-    <footer className="flex footer">
+    <footer className="flex pagecontainer footer">
       <Socials/>
     </footer>
   );

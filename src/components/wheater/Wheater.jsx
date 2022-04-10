@@ -39,8 +39,8 @@ const Wheater = ({ wheater, forecast }) => {
         <div className="flex temp">
           <h3>{Math.round(wheater.main.feels_like)}C°</h3>
           <h2>{wheater.weather.description}</h2>
-        </div>
           <hr className="divisor" />
+        </div>
 
         {wheater.weather.map(({ description, main, icon }) => (
           <div className="description">

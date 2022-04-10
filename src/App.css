@@ -17,7 +17,7 @@ body {
   padding-top: 10px;
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 70px);
   margin-inline: auto;
   background: #b1adad;
 }
@@ -38,17 +38,27 @@ background-size: cover;
   display: flex;
 }
 
-.header {
+.pagecontainer{
+  background-color: #0080cd;
+  justify-content: center;
+  height: 60px;
   align-items: center;
   text-align: center;
-  justify-content: center;
-  background-color: #0080cd;
-  color: white;
-  height: 60px;
+}
+
+.header {
+justify-content: space-around;
+}
+
+.logo{
+  width: 50px;
+  height: 50px;
+  /* margin-left: 10px; */
 }
 
 .form {
   height: 30px;
+  /* margin: 0px 400px 0px 0px; */
 }
 
 .search {
@@ -94,8 +104,10 @@ background-size: cover;
 }
 
 .divisor {
-  margin: 0px 0px 10px 0px;
-  width: 99px;
+  /* margin: 0px 0px 10px 0px; */
+  background-color: black;
+  width: 116px;
+  height: 5px;
   justify-self: center;
 }
 
@@ -105,9 +117,7 @@ background-size: cover;
 }
 
 .footer {
-  bottom: -90px;
+  bottom: 0px;
   position: absolute;
   width: 100%;
-  justify-content: center;
-  height: 60px;
 }

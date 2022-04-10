@@ -14,12 +14,13 @@ body {
 }
 
 .container {
-  padding-top: 10px;
+  padding-top: 30px;
   position: absolute;
   width: 100vw;
   height: calc(100vh - 70px);
   margin-inline: auto;
   background: #b1adad;
+  /* background-image: url(https://images.freeimages.com/images/large-previews/e83/broken-clouds-1537880.jpg); */
 }
 .warm{
 background-image: url(https://github.com/TylerPottsDev/weather-react/blob/master/src/assets/warm-bg.jpg?raw=true);
@@ -100,7 +101,7 @@ justify-content: space-around;
 }
 
 .temp h3 {
-  font-size: 50px;
+  font-size: 80px;
 }
 
 .divisor {
@@ -109,11 +110,18 @@ justify-content: space-around;
   width: 116px;
   height: 5px;
   justify-self: center;
+  position: absolute;
+  top: 190px;
+}
+
+.description{
+  margin: 96px 0px 0px 0px;
+  /* margin: 0px 0px 50px 0px; */
 }
 
 .forecast{
   justify-content: center;
-  margin: 30px 0 0 0;
+  margin: 120px 0 0 0;
 }
 
 .footer {

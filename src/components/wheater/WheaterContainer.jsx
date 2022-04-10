@@ -26,14 +26,34 @@ const WheaterContainer = () => {
     }
   }, [wheater]);
 
+  const wheaterClass = (temperature) => {
+    switch (temperature) {
+      case temperature > 25:
+        return "container warm";
+      case temperature < 25:
+        return "container cold";
+      default:
+        return "container";
+    }
+  };
+
+  // useEffect(()=>{
+  //   console.log()
+  // })
+
   const AwaitSearch = () => {
     return <h1>Para iniciar, digite uma cidade</h1>;
   };
 
-
   return (
-    <div className="container">
-    { wheater === null ? <AwaitSearch/> : <Wheater wheater={wheater} forecast={forecast} />}
+    <div
+      className={wheater?.main.feels_like > 25 ? "container warm" : "container cold"}
+    >
+      {wheater === null ? (
+        <AwaitSearch />
+      ) : (
+        <Wheater wheater={wheater} forecast={forecast} />
+      )}
     </div>
   );
 };

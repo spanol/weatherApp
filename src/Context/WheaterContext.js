@@ -15,6 +15,7 @@ export default function WheaterProvider({ children }) {
         setWheater,
         forecast,
         setForecast,
+
       }}
     >
       {children}
@@ -42,3 +43,4 @@ export function useForecast() {
   const { forecast, setForecast } = context;
   return { forecast, setForecast };
 }
+

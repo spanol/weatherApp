@@ -1,10 +1,12 @@
 import Wheater from "./Wheater";
 import { useForecast, useWheater } from "../../Context/WheaterContext";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const WheaterContainer = () => {
+  const [background, setBackground] = useState("container");
   const { wheater } = useWheater();
   const { forecast, setForecast } = useForecast();
+  const checkTemperature = wheater?.main.feels_like > 25 ? "container warm" : "container cold";
 
   useEffect(() => {
     function getForecast(id) {
@@ -14,6 +16,7 @@ const WheaterContainer = () => {
         .then((response) => response.json())
         .then((data) => {
           setForecast(data);
+          setBackground(checkTemperature)
           console.log(data);
         })
         .catch((error) => {
@@ -26,29 +29,12 @@ const WheaterContainer = () => {
     }
   }, [wheater]);
 
-  const wheaterClass = (temperature) => {
-    switch (temperature) {
-      case temperature > 25:
-        return "container warm";
-      case temperature < 25:
-        return "container cold";
-      default:
-        return "container";
-    }
-  };
-
-  // useEffect(()=>{
-  //   console.log()
-  // })
-
   const AwaitSearch = () => {
     return <h1>Para iniciar, digite uma cidade</h1>;
   };
 
   return (
-    <div
-      className={wheater?.main.feels_like > 25 ? "container warm" : "container cold"}
-    >
+    <div className={background}>
       {wheater === null ? (
         <AwaitSearch />
       ) : (

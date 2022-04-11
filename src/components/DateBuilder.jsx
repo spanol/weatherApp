@@ -10,14 +10,6 @@ const dateBuilder = (d) => {
     return `${day}, ${date} ${month} ${year}`
 }
 
-const dayBuilder = (d) => {
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-    let day = days[d.getDay()];
-
-    return day;
-
-}
 
 
-export {dateBuilder, dayBuilder};
+export {dateBuilder};

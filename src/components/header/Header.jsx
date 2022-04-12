@@ -61,7 +61,7 @@ const Header = () => {
       style={{ backgroundColor: background }}
       className="flex pagecontainer header"
     >
-      <form className="flex  form" onSubmit={handleOnSubmit}>
+      <form className="flex form" onSubmit={handleOnSubmit}>
         <input
           value={search}
           className="input "
@@ -69,16 +69,16 @@ const Header = () => {
           placeholder="Search for place..."
           onChange={(e) => setSearch(e.target.value)}
         />
-        <AiOutlineSearch className="search-icon" />
+        <button className="search-icon" type="submit" ><AiOutlineSearch/></button>
       </form>
       <ToastContainer
         position="top-center"
-        autoClose={2500}
+        autoClose={1000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
         rtl={false}
-        pauseOnFocusLoss
+        pauseOnFocusLoss={false}
         draggable
         pauseOnHover={false}
       />

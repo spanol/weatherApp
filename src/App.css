@@ -22,9 +22,16 @@ a {
   color: #000;
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  height: -webkit-fill-available;
+}
+
 .container {
   width: 100vw;
   height: min(470px, 100vh);
+  flex: 1 1 100%;
   text-align: center;
   background: #fff;
 }
@@ -59,7 +66,9 @@ a {
 .search-icon {
   position: relative;
   right: 20px;
-  top: 25%;
+  cursor: pointer;
+  border: none;
+  background: transparent;
 }
 
 .form {

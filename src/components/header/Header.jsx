@@ -30,7 +30,6 @@ const Header = () => {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    console.log(search);
     // localStorage.setItem("LastSearchedCity", search);
     GetWheater(search);
   };

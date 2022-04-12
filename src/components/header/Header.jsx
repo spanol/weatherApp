@@ -1,14 +1,15 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import {  useEffect } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import {
   useSearch,
   useWeather,
   useBackground,
   useForecast,
 } from "../../Context/WeatherContext";
+import { notify, notifyError } from "../toasts/toasts";
 
 const Header = () => {
   const { search, setSearch } = useSearch();
@@ -16,7 +17,6 @@ const Header = () => {
   const { weatherData, setWeatherData } = useWeather();
   const { forecast } = useForecast();
 
-  const notify = () => toast("Loading...");
 
   const GetWheater = (SearchedCity) => {
     const baseURL = `https://api.openweathermap.org/data/2.5/weather?q=${SearchedCity}&units=metric&APPID=b1502fce42dd4c060eb30b394654bc1d`;
@@ -24,8 +24,12 @@ const Header = () => {
       .get(baseURL)
       .then((data) => {
         setWeatherData(data.data);
+        console.log(data.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        notifyError();
+      });
   };
 
   const handleOnSubmit = (event) => {
@@ -69,19 +73,11 @@ const Header = () => {
           placeholder="Search for place..."
           onChange={(e) => setSearch(e.target.value)}
         />
-        <button className="search-icon" type="submit" ><AiOutlineSearch/></button>
+        <button className="search-icon" type="submit">
+          <AiOutlineSearch />
+        </button>
       </form>
-      <ToastContainer
-        position="top-center"
-        autoClose={1000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss={false}
-        draggable
-        pauseOnHover={false}
-      />
+      <ToastContainer/>
     </nav>
   );
 };

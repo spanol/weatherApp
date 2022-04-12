@@ -173,7 +173,7 @@ a {
   }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 350px) {
   .input {
     width: 250px;
     margin: 0;

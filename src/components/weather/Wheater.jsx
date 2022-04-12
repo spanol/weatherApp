@@ -1,10 +1,9 @@
-import { dateBuilder, dayBuilder } from "../DateBuilder";
-const Wheater = ({ wheater, forecast }) => {
+import { dateBuilder } from "../DateBuilder";
+const WeatherComponent = ({ wheater }) => {
   // salvar pesquisa no localstorage
   return (
     <>
       <div className="city">
-        {/* <p>Weather now in</p> */}
         {wheater.name}, {wheater.sys.country}
       </div>
 
@@ -28,26 +27,8 @@ const Wheater = ({ wheater, forecast }) => {
           </p>
         </div>
       ))}
-
-      <div className="flex forecast">
-        {forecast &&
-          forecast?.list?.slice(0, 3).map(({ dt_txt, main, weather }) => (
-            <div>
-              {weather.map(({ icon }) => (
-                <img
-                  src={`https://openweathermap.org/img/w/${icon}.png`}
-                  alt="weather icon"
-                />
-              ))}
-              <p>{dt_txt}</p>
-              <p>
-                {Math.round(main.temp_min)}C° - {Math.round(main.temp_max)}C°
-              </p>
-            </div>
-          ))}
-      </div>
     </>
   );
 };
 
-export default Wheater;
+export default WeatherComponent;

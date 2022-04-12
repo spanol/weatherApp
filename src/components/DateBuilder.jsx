@@ -10,6 +10,4 @@ const dateBuilder = (d) => {
     return `${day}, ${date} ${month} ${year}`
 }
 
-
-
-export {dateBuilder};
+export default dateBuilder;

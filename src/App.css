@@ -160,7 +160,7 @@ a {
 
 @media (max-width: 400px) {
   .input {
-    width: 320px;
+    width: 300px;
     margin: 0;
   }
 
@@ -170,5 +170,12 @@ a {
 
   .forecast{
     color:white;
+  }
+}
+
+@media (max-width: 300px) {
+  .input {
+    width: 250px;
+    margin: 0;
   }
 }

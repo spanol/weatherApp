@@ -156,6 +156,10 @@ a {
     width: 360px;
     margin: 0;
   }
+
+  .forecast {
+    margin: 50px 0 0 0;
+  }
 }
 
 @media (max-width: 400px) {

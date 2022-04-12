@@ -40,6 +40,7 @@ a {
   background-image: url(./assets/warm.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  color: #ffff;
 }
 
 .cold {

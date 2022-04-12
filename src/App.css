@@ -22,7 +22,7 @@ a {
   color: #000;
 }
 
-.app {
+.App {
   display: flex;
   flex-direction: column;
   height: -webkit-fill-available;

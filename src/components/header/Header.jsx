@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { AiOutlineSearch } from "react-icons/ai";
+import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import {
   useSearch,
   useWeather,
   useBackground,
   useForecast,
-} from "../Context/WeatherContext";
-import "react-toastify/dist/ReactToastify.css";
+} from "../../Context/WeatherContext";
 
 const Header = () => {
   const { search, setSearch } = useSearch();
@@ -23,7 +24,6 @@ const Header = () => {
       .get(baseURL)
       .then((data) => {
         setWeatherData(data.data);
-        console.log(data.data);
       })
       .catch((err) => console.log(err));
   };
@@ -31,9 +31,8 @@ const Header = () => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
     console.log(search);
-    localStorage.setItem("LastSearchedCity", search);
+    // localStorage.setItem("LastSearchedCity", search);
     GetWheater(search);
-    notify();
   };
 
   // useEffect(() => {
@@ -44,7 +43,7 @@ const Header = () => {
   // }, []);
 
   const checkTemperature =
-  weatherData?.main.feels_like > 23 ? "#7d2c78" : "#c5e6fd";
+    weatherData?.main.feels_like > 23 ? "#7d2c78" : "#c5e6fd";
 
   useEffect(() => {
     if (forecast != null) {
@@ -52,20 +51,17 @@ const Header = () => {
     }
   });
 
+  useEffect(() => {
+    if (weatherData != null) {
+      notify();
+    }
+  }, [weatherData]);
+
   return (
     <nav
       style={{ backgroundColor: background }}
       className="flex pagecontainer header"
     >
-      <a className="link" href="/">
-      <img
-        className="logo"
-        src={
-          "https://cdn.iconscout.com/icon/free/png-256/weather-2191838-1846632.png"
-        }
-        alt="logo"
-      />
-      </a>
       <form className="flex  form" onSubmit={handleOnSubmit}>
         <input
           value={search}
@@ -74,11 +70,11 @@ const Header = () => {
           placeholder="Search for place..."
           onChange={(e) => setSearch(e.target.value)}
         />
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <AiOutlineSearch className="search-icon" />
       </form>
-      {/* <ToastContainer
+      <ToastContainer
         position="top-center"
-        autoClose={3000}
+        autoClose={2500}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -86,7 +82,7 @@ const Header = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover={false}
-      /> */}
+      />
     </nav>
   );
 };

@@ -1,9 +1,7 @@
-import React from "react";
-
 export function Socials() {
-  const emoji = '❤️'
+  const emoji = "❤️";
   return (
-      <>
+    <>
       <p className="author-message">Developed with {emoji} by spanol</p>
       <div className="socials">
         <a
@@ -30,7 +28,6 @@ export function Socials() {
           />
         </a>
       </div>
-
     </>
   );
 }

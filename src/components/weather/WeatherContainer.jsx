@@ -11,7 +11,7 @@ const WeatherContainer = () => {
   const { weatherData } = useWeather();
 
   const checkTemperature =
-  weatherData?.main.feels_like > 23 ? "container warm" : "container cold";
+    weatherData?.main.feels_like > 23 ? "container warm" : "container cold";
 
   useEffect(() => {
     function getForecast(id) {
@@ -22,7 +22,6 @@ const WeatherContainer = () => {
         .then((data) => {
           setForecast(data);
           setBackground(checkTemperature);
-          console.log(data);
         })
         .catch((error) => {
           console.log(error);
@@ -40,7 +39,7 @@ const WeatherContainer = () => {
         <AwaitSearch />
       ) : (
         <>
-          <WeatherComponent wheater={weatherData} />
+          <WeatherComponent weatherData={weatherData} />
           <Forecast forecast={forecast} />
         </>
       )}

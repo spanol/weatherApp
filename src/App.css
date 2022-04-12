@@ -30,7 +30,7 @@ a {
 
 .container {
   width: 100vw;
-  height: min(470px, 100vh);
+  height: min(85vh);
   flex: 1 1 100%;
   text-align: center;
   background: #fff;
@@ -138,7 +138,7 @@ a {
 
 .forecast {
   justify-content: center;
-  margin: 20px 0 0 0;
+  margin: 70px 0 0 0;
 }
 
 .forecast-item {
@@ -157,13 +157,17 @@ a {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 400px) {
   .input {
-    width: 220px;
+    width: 320px;
     margin: 0;
   }
 
   .logo {
     margin-right: 10px;
+  }
+
+  .forecast{
+    color:white;
   }
 }

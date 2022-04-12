@@ -1,6 +1,6 @@
 const AwaitSearch = () => {
   return (
-    <div>
+    <div className="container">
       <h1>To start, enter a city...</h1>
     </div>
   );

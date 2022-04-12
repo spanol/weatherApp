@@ -168,8 +168,13 @@ a {
     margin-right: 10px;
   }
 
-  .forecast{
-    color:white;
+  .forecast {
+    color: white;
+    margin: 10px;
+  }
+
+  .refresh {
+    left: 40px;
   }
 }
 
@@ -177,5 +182,13 @@ a {
   .input {
     width: 250px;
     margin: 0;
+  }
+
+  .forecast {
+    margin: 20px;
+  }
+
+  .refresh {
+    left: 10px;
   }
 }

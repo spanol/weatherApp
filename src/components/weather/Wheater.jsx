@@ -1,5 +1,5 @@
 import dateBuilder from "../../utils/DateBuilder";
-import {IoIosRefresh} from 'react-icons/io';
+import { IoIosRefresh } from 'react-icons/io';
 const WeatherComponent = ({ weatherData }) => {
   const { name, main, sys, weather } = weatherData;
 

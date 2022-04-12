@@ -16,7 +16,7 @@ const WeatherContainer = () => {
   useEffect(() => {
     function getForecast(id) {
       return fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?id=${id}&units=metric&APPID=${process.env.APIKEY}`
+        `https://api.openweathermap.org/data/2.5/forecast?id=${id}&units=metric&APPID=` + process.env.APIKEY
       )
         .then((response) => response.json())
         .then((data) => {

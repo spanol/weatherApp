@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
@@ -19,7 +19,7 @@ const Header = () => {
   const notify = () => toast("Loading...");
 
   const GetWheater = (SearchedCity) => {
-    const baseURL = `https://api.openweathermap.org/data/2.5/weather?q=${SearchedCity}&units=metric&APPID=${process.env.APIKEY}`;
+    const baseURL = `https://api.openweathermap.org/data/2.5/weather?q=${SearchedCity}&units=metric&APPID=b1502fce42dd4c060eb30b394654bc1d`;
     axios
       .get(baseURL)
       .then((data) => {

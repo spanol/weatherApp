@@ -7,11 +7,11 @@ import ErrorComponent from "./components/error/error";
 function App() {
   return (
     <WeatherProvider>
-      <div className="App">
-        <Header />
-        {Response.code === 404 ? <ErrorComponent/> : <WheaterContainer />}
-        <Footer />
+      <Header />
+      <div className="App flex min-h-screen flex-col justify-center text-center items-center">
+        {Response.code === 404 ? <ErrorComponent /> : <WheaterContainer />}
       </div>
+      <Footer />
     </WeatherProvider>
   );
 }

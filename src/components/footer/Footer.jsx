@@ -2,13 +2,8 @@ import { useBackground } from "../../Context/WeatherContext";
 import { Socials } from "./Socials";
 
 export default function Footer() {
-  const { background } = useBackground();
-
   return (
-    <footer
-      style={{ backgroundColor: background }}
-      className="flex pagecontainer footer"
-    >
+    <footer className="w-full h-16 flex justify-center items-center bg-gray-800 text-white">
       <Socials />
     </footer>
   );

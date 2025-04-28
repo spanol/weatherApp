@@ -10,7 +10,7 @@ const WeatherContainer = () => {
   const { forecast, setForecast } = useForecast();
   const { weatherData } = useWeather();
 
-  const checkTemperature = weatherData?.main.feels_like > 20 ? "warm" : "cold";
+  const checkTemperature = weatherData?.main.feels_like;
 
   useEffect(() => {
     const getData = async (id) => {
@@ -32,10 +32,10 @@ const WeatherContainer = () => {
       {weatherData === null ? (
         <AwaitSearch />
       ) : (
-        <>
+        <div className="bg-white bg-opacity-20 backdrop-blur-lg rounded-xl shadow-lg p-6 text-white max-w-2xl mx-auto">
           <WeatherComponent weatherData={weatherData} />
           <Forecast temperature={checkTemperature} forecast={forecast} />
-        </>
+        </div>
       )}
     </div>
   );

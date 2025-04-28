@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import { useWeather } from "../../Context/WeatherContext";
 import { notify, notifyError } from "../toasts/toasts";
 import { getCurrentWeather } from "../../api/weatherApi";
+import getWeatherBackground from "../../utils/getWeatherBackground";
 
 const Header = () => {
   const { weatherData, setWeatherData } = useWeather();
@@ -14,7 +15,7 @@ const Header = () => {
     const response = await getCurrentWeather(SearchedCity);
     if (response) {
       setWeatherData(response);
-      document.body.classList.add(checkTemperature);
+      document.body.classList.add(getWeatherBackground(response));
     } else {
       notifyError();
     }
@@ -42,7 +43,11 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-sm bg-white/30 shadow-sm">
+    <header
+      className="sticky top-0 z-50 w-full backdrop-blur-sm bg-white/30 shadow-sm
+    transition-all duration-300 ease-in-out
+    "
+    >
       <div className="container mx-auto px-4 py-3">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center">
@@ -80,7 +85,7 @@ const Header = () => {
             </button>
           </form>
 
-          {search && weatherData && (
+          {weatherData && (
             <div className="hidden md:flex items-center space-x-2">
               <span className="text-sm font-medium text-gray-600">
                 {weatherData.name}, {weatherData.sys.country}

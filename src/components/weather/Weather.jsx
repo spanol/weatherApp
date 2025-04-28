@@ -5,7 +5,7 @@ const WeatherComponent = ({ weatherData }) => {
   const { name, main, sys, weather } = weatherData;
 
   return (
-    <div className="bg-white bg-opacity-20 backdrop-blur-lg rounded-xl shadow-lg p-6 text-white max-w-2xl mx-auto">
+    <div className="">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-2xl font-bold">
           {name}, {sys.country}

@@ -1,10 +1,5 @@
 const Forecast = ({ forecast, temperature }) => {
-  const tempColor =
-    temperature > 25
-      ? "bg-orange-100"
-      : temperature < 10
-      ? "bg-blue-100"
-      : "bg-green-100";
+  const tempColor = temperature > 20 ? "bg-orange-100" : "bg-sky-100";
 
   return (
     <div className={`${tempColor} rounded-xl p-4 mt-6 shadow-md`}>

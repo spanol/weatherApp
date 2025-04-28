@@ -14,14 +14,29 @@
 .animate-fade-in {
   animation: fadeIn 0.5s forwards;
 }
+
 .warm {
-  background-image: url(./assets/warm.jpg);
+  background-image: url(./assets/tropical.png);
   background-repeat: no-repeat;
   color: #ffff;
 }
 
 .cold {
-  background-image: url(./assets/rainy.png);
+  background-image: url(./assets/storm.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.desertic {
+  background-image: url(./assets/dersertic.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.snowy {
+  background-image: url(./assets/snow.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

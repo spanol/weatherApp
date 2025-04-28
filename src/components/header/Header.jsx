@@ -13,9 +13,9 @@ const Header = () => {
 
   const getData = async (SearchedCity) => {
     const response = await getCurrentWeather(SearchedCity);
-    if (response) {
+    if (response && response.cod === 200) {
       setWeatherData(response);
-      document.body.classList.add(getWeatherBackground(response));
+      document.body.classList.add(getWeatherBackground(weatherData));
     } else {
       notifyError();
     }
